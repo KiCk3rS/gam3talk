@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Search, User, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar() {
     return (
@@ -54,6 +55,7 @@ export function Navbar() {
                         <User className="h-5 w-5" />
                         <span className="sr-only">Profile</span>
                     </Button>
+                    <ThemeToggle />
                     <Button variant="ghost" size="icon" className="md:hidden">
                         <Menu className="h-5 w-5" />
                         <span className="sr-only">Menu</span>
