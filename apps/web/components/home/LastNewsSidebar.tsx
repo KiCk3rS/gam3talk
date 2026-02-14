@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState, useEffect } from "react";
 import { MessageCircle, ChevronDown, ChevronLeft, ChevronRight, ArrowRight, Rss } from "lucide-react";
+import { Link } from '@/i18n/routing';
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { getSlugFromCategory } from "@/lib/slugUtils";
+
 
 // Mock Data
 const GAMES = [
@@ -121,10 +123,23 @@ const NEWS_ITEMS = [
 
 const ITEMS_PER_PAGE = 8;
 
-export function LastNewsSidebar() {
+interface LastNewsSidebarProps {
+    initialCategory?: string;
+}
+
+export function LastNewsSidebar({ initialCategory }: LastNewsSidebarProps) {
     const [activePage, setActivePage] = useState(1);
-    const [selectedGame, setSelectedGame] = useState("Tous les jeux");
+    const [selectedGame, setSelectedGame] = useState(initialCategory || "Tous les jeux");
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    // Sync state with prop if it changes (e.g. navigation)
+    useEffect(() => {
+        if (initialCategory) {
+            setSelectedGame(initialCategory);
+        } else {
+            setSelectedGame("Tous les jeux");
+        }
+    }, [initialCategory]);
 
     // Filter news
     const filteredNews =
@@ -143,11 +158,6 @@ export function LastNewsSidebar() {
         }
     };
 
-    const handleGameSelect = (game: string) => {
-        setSelectedGame(game);
-        setActivePage(1); // Reset to first page on filter change
-        setIsDropdownOpen(false);
-    };
 
     return (
         <Card className="bg-card border-none shadow-none text-foreground">
@@ -172,18 +182,23 @@ export function LastNewsSidebar() {
 
                     {isDropdownOpen && (
                         <div className="absolute top-full left-0 w-full mt-1 bg-popover border border-border rounded-md shadow-lg z-50 py-1">
-                            {GAMES.map((game) => (
-                                <button
-                                    key={game}
-                                    className={cn(
-                                        "w-full text-left px-4 py-2 text-xs font-bold uppercase cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors",
-                                        selectedGame === game ? "text-primary bg-accent/50" : "text-popover-foreground hover:text-primary"
-                                    )}
-                                    onClick={() => handleGameSelect(game)}
-                                >
-                                    {game}
-                                </button>
-                            ))}
+                            {GAMES.map((game) => {
+                                const gameSlug = getSlugFromCategory(game);
+                                const href = game === "Tous les jeux" ? "/news" : `/news/${gameSlug}`;
+                                return (
+                                    <Link
+                                        key={game}
+                                        href={href}
+                                        className={cn(
+                                            "block w-full text-left px-4 py-2 text-xs font-bold uppercase cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors",
+                                            selectedGame === game ? "text-primary bg-accent/50" : "text-popover-foreground hover:text-primary"
+                                        )}
+                                        onClick={() => setIsDropdownOpen(false)}
+                                    >
+                                        {game}
+                                    </Link>
+                                );
+                            })}
                         </div>
                     )}
                 </div>

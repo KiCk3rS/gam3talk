@@ -3,39 +3,44 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { mockNews } from "@/lib/mockData";
 import { cn } from "@/lib/utils";
+import { useLocale } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 export function NewsBentoGrid() {
+    const locale = useLocale() as 'en' | 'fr' | 'es';
     const mainNews = mockNews.find((n) => n.isMain) || mockNews[0];
     const rightTopNews = mockNews[1];
     const rightBottomNews1 = mockNews[2];
     const rightBottomNews2 = mockNews[3];
 
     const NewsItem = ({ news, className, titleSize = "text-xl" }: { news: typeof mainNews, className?: string, titleSize?: string }) => (
-        <Card className={cn("relative overflow-hidden group cursor-pointer border-none shadow-none rounded-none", className)}>
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+        <Link href={`/news/${news.slug[locale]}`} className={cn("block relative overflow-hidden group cursor-pointer h-full", className)}>
+            <Card className="relative h-full w-full border-none shadow-none rounded-none overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
 
-            {/* News Background Image */}
-            <div className="absolute inset-0">
-                <Image
-                    src={news.image}
-                    alt={news.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-            </div>
-
-            <CardContent className="absolute bottom-0 left-0 right-0 p-6 z-20 flex flex-col justify-end h-full">
-                <div className="flex justify-between items-center mb-2">
-                    <Badge variant="secondary" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-sm">
-                        {news.category}
-                    </Badge>
-                    <span className="text-xs text-gray-300 font-mono">{news.date}</span>
+                {/* News Background Image */}
+                <div className="absolute inset-0">
+                    <Image
+                        src={news.image}
+                        alt={news.title[locale]}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                 </div>
-                <h3 className={cn("font-bold text-white leading-tight", titleSize)}>
-                    {news.title}
-                </h3>
-            </CardContent>
-        </Card>
+
+                <CardContent className="absolute bottom-0 left-0 right-0 p-6 z-20 flex flex-col justify-end h-full">
+                    <div className="flex justify-between items-center mb-2">
+                        <Badge variant="secondary" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-sm">
+                            {news.category}
+                        </Badge>
+                        <span className="text-xs text-gray-300 font-mono">{news.date}</span>
+                    </div>
+                    <h3 className={cn("font-bold text-white leading-tight", titleSize)}>
+                        {news.title[locale]}
+                    </h3>
+                </CardContent>
+            </Card>
+        </Link>
     );
 
     return (

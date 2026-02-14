@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -10,7 +9,11 @@ import { cn } from "@/lib/utils";
 import { mockNews, mockMatches } from "@/lib/mockData";
 import { SectionHeader } from "@/components/ui/section-header";
 
+import { useLocale } from 'next-intl';
+import { Link } from '@/i18n/routing';
+
 export function NewsAndMatches() {
+    const locale = useLocale() as 'en' | 'fr' | 'es';
     // Slice news for display
     const newsList = mockNews.slice(0, 6);
 
@@ -34,10 +37,10 @@ export function NewsAndMatches() {
                         <div className="flex flex-col gap-8">
                             {/* Featured Article */}
                             {newsList.length > 0 && (
-                                <Link href={`/news/${newsList[0].id}`} className="group block relative w-full aspect-video md:aspect-[21/9] rounded-xl overflow-hidden">
+                                <Link href={`/news/${newsList[0].slug[locale]}`} className="group block relative w-full aspect-video md:aspect-[21/9] rounded-xl overflow-hidden">
                                     <Image
                                         src={newsList[0].image}
-                                        alt={newsList[0].title}
+                                        alt={newsList[0].title[locale]}
                                         fill
                                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
@@ -55,10 +58,10 @@ export function NewsAndMatches() {
                                             </span>
                                         </div>
                                         <h3 className="text-2xl md:text-4xl font-black uppercase leading-none text-white mb-3 group-hover:text-primary transition-colors">
-                                            {newsList[0].title}
+                                            {newsList[0].title[locale]}
                                         </h3>
                                         <p className="text-gray-300 line-clamp-2 md:text-lg font-medium">
-                                            {newsList[0].summary}
+                                            {newsList[0].summary[locale]}
                                         </p>
                                     </div>
                                 </Link>
@@ -67,11 +70,11 @@ export function NewsAndMatches() {
                             {/* List of articles */}
                             <div className="flex flex-col gap-6">
                                 {newsList.slice(1).map((news) => (
-                                    <Link href={`/news/${news.id}`} key={news.id} className="group flex flex-col md:flex-row gap-4 md:gap-6 items-start">
+                                    <Link href={`/news/${news.slug[locale]}`} key={news.id} className="group flex flex-col md:flex-row gap-4 md:gap-6 items-start">
                                         <div className="relative w-full md:w-1/3 aspect-video shrink-0 rounded-lg overflow-hidden">
                                             <Image
                                                 src={news.image}
-                                                alt={news.title}
+                                                alt={news.title[locale]}
                                                 fill
                                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                                             />
@@ -86,10 +89,10 @@ export function NewsAndMatches() {
                                                 </span>
                                             </div>
                                             <h3 className="text-lg md:text-xl font-black uppercase leading-tight text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                                                {news.title}
+                                                {news.title[locale]}
                                             </h3>
                                             <p className="text-sm text-muted-foreground line-clamp-2 hidden md:block">
-                                                {news.summary}
+                                                {news.summary[locale]}
                                             </p>
                                         </div>
                                     </Link>
@@ -110,11 +113,11 @@ export function NewsAndMatches() {
                             />
                             <div className="flex flex-col gap-4">
                                 {trendingNews.map((item, idx) => (
-                                    <Link href={`/news/${item.id}`} key={`trend-${idx}`} className="group flex gap-4 items-start p-2 rounded-lg hover:bg-accent/50 transition-colors">
+                                    <Link href={`/news/${item.slug[locale]}`} key={`trend-${idx}`} className="group flex gap-4 items-start p-2 rounded-lg hover:bg-accent/50 transition-colors">
                                         <div className="relative w-20 h-16 shrink-0 rounded overflow-hidden bg-muted">
                                             <Image
                                                 src={item.image}
-                                                alt={item.title}
+                                                alt={item.title[locale]}
                                                 fill
                                                 className="object-cover group-hover:scale-110 transition-transform duration-300"
                                             />
@@ -122,7 +125,7 @@ export function NewsAndMatches() {
                                         <div className="flex flex-col gap-1">
                                             <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider group-hover:text-primary transition-colors">{item.category}</span>
                                             <h4 className="text-sm font-bold leading-tight text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                                                {item.title}
+                                                {item.title[locale]}
                                             </h4>
                                             <div className="flex items-center gap-2 text-[10px] text-muted-foreground">
                                                 <span>{item.date}</span>

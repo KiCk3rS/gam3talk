@@ -1,0 +1,13 @@
+{
+    "HomePage": {
+        "title": "Welcome to Gam3Talk"
+    },
+    "Navigation": {
+        "home": "Home",
+        "news": "News",
+        "matches": "Matches"
+    },
+    "Article": {
+        "back": "Back"
+    }
+}

@@ -1,15 +1,16 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from '@/i18n/routing';
 import Image from "next/image";
 import { Command, Facebook, Twitter, Instagram, Twitch, Youtube, Mail, Send, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { mockNews, mockMatches, mockInterviews } from "@/lib/mockData";
-
+import { useLocale } from 'next-intl';
 
 export function Footer() {
+    const locale = useLocale() as 'en' | 'fr' | 'es';
     const latestNews = mockNews.slice(0, 3);
     const latestInterviews = mockInterviews.slice(0, 3);
     const latestMatches = mockMatches.slice(0, 3);
@@ -52,18 +53,18 @@ export function Footer() {
                         <ul className="space-y-4">
                             {latestNews.map((news) => (
                                 <li key={news.id}>
-                                    <Link href={`/news/${news.id}`} className="group flex gap-3 items-start">
+                                    <Link href={`/news/${news.slug[locale]}`} className="group flex gap-3 items-start">
                                         <div className="relative w-16 h-16 shrink-0 rounded-md overflow-hidden bg-muted">
                                             <Image
                                                 src={news.image}
-                                                alt={news.title}
+                                                alt={news.title[locale]}
                                                 fill
                                                 className="object-cover group-hover:scale-110 transition-transform duration-300"
                                             />
                                         </div>
                                         <div className="flex flex-col gap-1">
                                             <h5 className="text-sm font-bold leading-tight group-hover:text-primary transition-colors line-clamp-2">
-                                                {news.title}
+                                                {news.title[locale]}
                                             </h5>
                                             <span className="text-[10px] uppercase font-bold text-muted-foreground">
                                                 {news.date}
