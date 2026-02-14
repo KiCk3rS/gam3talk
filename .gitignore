@@ -1,0 +1,24 @@
+# Node
+node_modules/
+.next/
+dist/
+build/
+.env
+.env.local
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.env
+
+# MacOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
