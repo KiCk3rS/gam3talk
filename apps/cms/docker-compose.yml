@@ -1,0 +1,25 @@
+version: '3'
+services:
+  strapiDB:
+    image: postgres:15-alpine
+    container_name: gam3talk-strapi-db
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    volumes:
+      - strapi-data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+    networks:
+      - strapi
+
+networks:
+  strapi:
+    name: Strapi
+    driver: bridge
+
+volumes:
+  strapi-data:

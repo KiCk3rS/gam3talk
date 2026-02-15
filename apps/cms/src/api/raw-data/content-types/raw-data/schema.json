@@ -1,0 +1,29 @@
+{
+    "kind": "collectionType",
+    "collectionName": "raw-datas",
+    "info": {
+        "singularName": "raw-data",
+        "pluralName": "raw-datas",
+        "displayName": "RawData",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "attributes": {
+        "sourceId": {
+            "type": "string",
+            "unique": true
+        },
+        "rawContent": {
+            "type": "json"
+        },
+        "processed": {
+            "type": "boolean",
+            "default": false
+        },
+        "fetchedAt": {
+            "type": "datetime"
+        }
+    }
+}

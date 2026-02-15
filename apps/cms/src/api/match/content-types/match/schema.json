@@ -1,0 +1,46 @@
+{
+    "kind": "collectionType",
+    "collectionName": "matches",
+    "info": {
+        "singularName": "match",
+        "pluralName": "matches",
+        "displayName": "Match",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "teamHome": {
+            "type": "string"
+        },
+        "teamAway": {
+            "type": "string"
+        },
+        "scoreHome": {
+            "type": "integer"
+        },
+        "scoreAway": {
+            "type": "integer"
+        },
+        "date": {
+            "type": "datetime"
+        },
+        "tournament": {
+            "type": "string"
+        },
+        "status": {
+            "type": "enumeration",
+            "enum": [
+                "Scheduled",
+                "Live",
+                "Finished"
+            ]
+        },
+        "game": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::game.game"
+        }
+    }
+}

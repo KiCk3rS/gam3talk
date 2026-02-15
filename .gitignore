@@ -22,3 +22,6 @@ venv/
 # IDE
 .vscode/
 .idea/
+
+# Data
+apps/agent/scraper/data/**/*.json

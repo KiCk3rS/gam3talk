@@ -1,0 +1,176 @@
+Starting Scraper Agent...
+Fetching from https://www.reddit.com/r/leagueoflegends/hot/.rss...
+Found 25 entries. Parsing...
+Saving 25 items...
+Saved https://www.reddit.com/r/leagueoflegends/comments/1qzs3qf/monday_megathread_ask_questions_and_share/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\cbc03616533d746c5d64d96be6b15a18.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1qvklhn/patch_263_bug_megathread/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\8c8cb4ae35cdf2ee1ad120e8b68218ac.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r59m17/t1_vs_bnk_fearx_lck_cup_2026_playoffs_upper/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\1c9829ecafe4099d4d16c52d2edf81f2.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r51njs/sentinels_vs_disguised_lcs_2026_lockin_upper/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\be40abc3f089df16740166bf17be90b4.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r5aj5l/t1_vs_bnk_fearx_lck_cup_2026_playoffs_upper/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\8c08577a99ccf412644837080ea6448b.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r59z29/the_single_ingame_feature_that_would_eliminate_70/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\85c9254c214ee7bb0b3adea6d2f28bc0.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r5bd5v/t1_vs_bfx_game_3_pmt/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\c46d6ab0ebd6b87c28b59da78dab9f86.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r4xhqj/once_a_year_you_can_cast_a_non_ultimate_skill_in/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\6d0fe687355d9ca34ff63726375912dd.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r52xfg/i_would_like_to_have_the_ability_to_disable/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\ac8d96effe31f494aec199b071ce64d4.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r599pe/not_even_the_ocean_can_separate_massu_and_busio/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\3c1c56f426dce77f1302ec3b729bede7.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r4vdyw/support_minion_rule_should_be_disabled_if_team/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\b452f5b9654a70069c77e72a30e471dd.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r4im6q/i_won_a_game_of_aram_mayhem_on_every_champion/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\4474e3aef50c08548143039dbbe26f39.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r4cuiw/the_joke_that_league_is_the_worst_game_has_done/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\d27ab05e4e768d06beb7ad0723ccf113.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r51orw/movistar_koi_talk_after_defeat_against_heretics/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\615fb04795237b7f4edf53b33435d71b.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r59l5n/after_a_decade_on_this_game_i_finally_understood/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\37dd7f5f89715e437ba1ca831850a905.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r4t3ch/high_elo_players_have_you_ever_struggled_in_low/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\e6673cc217001160854aea149a1078e7.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r4iq9l/geng_vs_dplus_kia_lck_cup_2026_playoffs_upper/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\a5faa9f91f11f2f8eff8be7b748020ef.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r4rk71/i_won_the_final_zeffira_battle/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\e41e238acb1d8006ee19c8d9c4a7f58c.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r4o25z/how_are_kiins_chances_of_getting_picked_for_asian/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\8de0ab757d99a518ed1fbee7ea5d7057.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r55ja6/prom_queen_in_mayhem_does_not_work/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\061213fed897b82de5950a3bed2d83e5.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r4uwvs/dsg_castle_were_playing_better_on_stage_than_like/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\058498f6f554fa442f5f853b481e4fc8.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r5b7wa/gold_penalty_icon_is_gone_for_half_a_year_now/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\16d562938e9021cbfd85d0c92b423829.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r4snvk/do_buffs_need_a_buff/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\216b1ec94c0af9bd7a457a795810b1b8.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r4ud2s/my_spirit_blossom_springs_ahri_cosplay_ig/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\9bf7354c52e62efb4a57b59f5338641d.json
+Saved https://www.reddit.com/r/leagueoflegends/comments/1r4pamz/playing_for_13_years_i_know_my_mistakes_but_cant/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\b8537f2177946e0d3ee83aa2a0d91b47.json
+Fetching from https://www.reddit.com/r/VALORANT/hot/.rss...
+Found 25 entries. Parsing...
+Saving 25 items...
+Saved https://www.reddit.com/r/VALORANT/comments/1quv41n/valorant_1202_bug_megathread/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\56c7a41a4b217dab5ad8025b7108886f.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r5b3tn/tejo_model_by_me/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\f1c700601eb4aed3fbb1ce6fb556b7b5.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r4wm4j/hospital_flick_on_gekko/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\683dce122dc6f504012efcb12c2d4ff3.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r51t4k/what_the_hell_is_this_game/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\f2cfbc202af9e47d0f1ca82e797c88c0.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r57pun/marteen_broke_multiple_bo5_kill_records_and_sent/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\2f1ddddfd368e2d352d8c86b9e2181b4.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r4ks35/wakanda_timing_is_that/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\6ceb5f40d9e5508fc587e1054d6c2389.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r4vhdt/duo_unfriended_me_over_a_few_losses_does_your/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\dd333cd8bd3455bb7a9d668a61ce5130.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r4fklu/valorant_mobiles_new_game_mode/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\bb41b5f29a38d59eb6f7d0ec702e3371.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r4qk8c/my_favorite_defuse_attempt_and_enemy_reaction/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\d969ad0b80d5fca3f1eb6737e7d59e22.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r4ab23/this_wouldve_been_funny_in_qp_but_this_is_comp/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\0d5c7fdb3a7e986c37bc39905ee73b9d.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r56kdu/how_to_recognize_mistakes_during_vod_reviews/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\af96ef3b6d54cba98a7302771d784eb7.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r56fxd/do_i_get_an_rr_refund_if_i_have_botting_throwing/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\ac286971d55588443ab4181f48b5e5cd.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r4dpte/valorant_mobile_new_bundle/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\7ca62ec099b8ea270b93ab34a2f95650.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r59i0e/when_does_v26_act_2_start/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\f1141a0a5304c99288d357a17af52bb1.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r5469o/former_plat_2_player_returning_to_the_game_but/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\162e556bcc56a56d97ae665c726615e6.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r4y4u8/oc_agent_concept/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\740c5cd51600dc16a5847e8799c4a977.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r5buje/bro/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\cb1edce11986d0200401d55498045a99.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r53uap/for_raze_main_or_users/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\5536b7681346dc5e2a4b1f380e80e812.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r4z03z/voice_chat_questions/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\5f10af1ff630806f91bce286586cc934.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r4xy1j/can_someone_review_my_aim_and_tell_me_what_im/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\c05074f991bc1081225817810c8c4d3b.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r59z51/teammates_needed/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\f13d2b0962d7e69a2767b1ee3c873d08.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r4rn4v/my_friend_cant_join_our_prem_team/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\9459622498ecba19c17c36f353268070.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r4us18/lobbies_are_horrific/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\b5eedbb49582a857bf2b433d34f223f7.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r49byy/clean_ace/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\c24268568582078de4dc515fa9bc84dd.json
+Saved https://www.reddit.com/r/VALORANT/comments/1r4ybaw/how_do_i_fix_my_inconsistent_aim_in_valorant/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\31e27c5aa8bbd89611de606c3f370a82.json
+Fetching from https://www.dexerto.com/league-of-legends/feed...
+Found 50 entries. Parsing...
+Saving 50 items...
+Saved https://www.dexerto.com/tech/why-logitech-gs-pro-x2-superstrike-is-a-complete-game-changer-3318844/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\09620845f476d34d0cca310f407700d7.json
+Saved https://www.dexerto.com/gaming/riot-confirms-2xko-layoffs-as-player-numbers-fall-short-3316372/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\1a7de31e83a372083d184af241c6e7c9.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-streamer-muted-by-riot-after-maine-coon-cat-flops-on-her-desk-3309891/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\439fdc93fbeeecfc74e0e796c3df04f6.json
+Saved https://www.dexerto.com/league-of-legends/ex-wow-lead-joins-riot-games-in-massive-boost-for-league-mmo-3306788/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\965e377a7eee9522babb0291ed4e3785.json
+Saved https://www.dexerto.com/twitch/lol-streamer-drututt-banned-on-twitch-for-joke-about-how-he-gets-no-women-3304131/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\332dad95ab7617bee83afc659af1b29d.json
+Saved https://www.dexerto.com/entertainment/razers-project-ava-lets-you-summon-faker-as-an-ai-hologram-assistant-on-your-desk-3301278/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\e800b67e7f51eea982b6ea16f4453b2b.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-gets-turned-off-for-everyone-after-2016-error-repeats-10-years-later-3300648/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\910e1422e78369a6e6df45fa1d792ac7.json
+Saved https://www.dexerto.com/league-of-legends/riot-confirms-plans-for-lol-shakeup-in-2027-with-new-visuals-client-3296182/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\b77a669c13cec3eb848ace9a6101bf7c.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-finally-gets-wasd-controls-but-not-everyone-is-a-fan-3291819/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\2244819e457996a100a6eba7f557cafc.json
+Saved https://www.dexerto.com/league-of-legends/erotic-novel-accused-of-basing-protagonist-on-lol-icon-faker-gets-taken-down-3288205/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\b07060da847585c09e122b036200a0ef.json
+Saved https://www.dexerto.com/league-of-legends/t1-accepts-elon-musks-challenge-for-top-lol-team-to-compete-against-grok-ai-3286754/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\502d18a64acd7d77444c9b61dbffc579.json
+Saved https://www.dexerto.com/league-of-legends-esports/t1-beat-kt-rolster-to-claim-third-straight-league-of-legends-world-championship-3281079/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\0cdade05223067674a561f5b7a0df7bc.json
+Saved https://www.dexerto.com/league-of-legends/gen-gs-chovy-has-conquered-the-lck-now-hes-chasing-worlds-glory-3268013/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\0991074dd2d14e5917c9eecd2f982c4d.json
+Saved https://www.dexerto.com/league-of-legends/bwipo-says-he-doesnt-believe-his-ridiculous-comments-after-fearing-for-his-league-career-3266545/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\b2e2a55786a1d4cccbed53468641868f.json
+Saved https://www.dexerto.com/league-of-legends/lol-delays-worlds-music-video-to-edit-out-bwipo-after-comments-on-women-in-esports-3264193/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\e6104c4601004242f9193209bcc9b3e3.json
+Saved https://www.dexerto.com/league-of-legends/bwipo-responds-to-backlash-for-comment-about-womens-esports-and-flyquest-suspension-3249456/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\d05fb9dc50635ea1d227f93733ba6005.json
+Saved https://www.dexerto.com/league-of-legends/bwipo-faces-outrage-after-saying-women-should-avoid-competitive-league-during-periods-3247789/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\76cadf501f631cacf593cb23312aba91.json
+Saved https://www.dexerto.com/league-of-legends/lol-player-is-so-unhappy-with-a-250-gacha-skin-that-theyre-calling-for-government-regulation-3244282/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\a9bba50ef942690ecfa8720c75847cbf.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-patch-25-17-will-turn-several-champions-into-viable-junglers-3242543/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\dc7b5bd37b8306130240bd987cbbd874.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-to-wipe-thousands-of-smurf-and-bought-alt-accounts-3236631/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\405f588048c56fd608030a1992031740.json
+Saved https://www.dexerto.com/league-of-legends/one-lol-dev-single-handedly-won-over-gamings-most-toxic-community-in-less-than-a-week-3236081/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\14d140811fec255c49c3bb677aedb8cb.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-patch-25-16-notes-aim-to-make-lol-less-balanced-3233486/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\5f284a920af48c13a7953c6499630ea9.json
+Saved https://www.dexerto.com/league-of-legends/deleted-lol-cinematic-under-fire-as-fans-bash-riots-use-of-ai-3233962/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\7006f00d62f34c675631e4fae9599ad5.json
+Saved https://www.dexerto.com/league-of-legends/faker-re-signs-with-t1-until-2030-doesnt-plan-to-retire-from-lol-any-time-soon-3230845/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\8783d1c71d24c07626487dd0cb4f0ac0.json
+Saved https://www.dexerto.com/league-of-legends/counter-strike-players-create-fake-pro-lol-team-to-rig-matches-get-caught-immediately-3230626/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\4e955fefde30b0a394ac533e38b3180f.json
+Saved https://www.dexerto.com/league-of-legends/lol-patch-25-15-notes-deliver-a-huge-list-of-champion-nerfs-3226731/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\88a1d54ab7fc236a71b96e0de264a400.json
+Saved https://www.dexerto.com/league-of-legends/100-thieves-exit-competitive-league-of-legends-amid-massive-lta-viewership-decline-3228226/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\cf65be4d01e44a9678da823300865d82.json
+Saved https://www.dexerto.com/league-of-legends/aspiring-lol-pro-got-banned-for-inting-but-riot-freed-him-after-proving-its-a-skill-issue-3226591/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\3e2e4ae87cad0ac746d1c824441252c4.json
+Saved https://www.dexerto.com/league-of-legends/one-of-lols-best-junglers-went-pro-because-of-a-divine-blessing-from-a-taoist-temple-3223006/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\0fd47ead40d6cf38e080869919c3996d.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-patch-25-14-notes-3221376/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\9b82ec296e9e56b9fb40e5bac70e0797.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-update-25-13-patch-notes-3215819/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\fa0e498b587384177d9c6132042dad8e.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-finally-gets-a-womens-pro-league-after-more-than-15-years-3216883/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\9c1d21c4237fb79fdf0d30a96f781fe4.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-msi-2025-full-schedule-qualified-teams-3208820/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\86876d34715a5bd9d96adc5d47cd25ed.json
+Saved https://www.dexerto.com/league-of-legends/legendary-lol-pro-perkz-retires-after-almost-a-decade-of-competing-3210595/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\4b5943e2adaeabe17e8f768bf5556526.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-25-12-patch-notes-3194011/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\a6993db1a4c77bbf4c5921f7555e90d8.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-now-has-pros-who-werent-even-born-when-lol-came-out-3206778/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\be2df5a383268cc51d9b2750bcc2e30e.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-update-25-11-patch-notes-3196241/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\d1b837975eb8a2877bd3542e68c5ce8b.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-leaks-reveal-games-spiciest-skin-ever-3198250/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\87c8b940a73a664cc63aa4a23e87dbf5.json
+Saved https://www.dexerto.com/league-of-legends/uzi-enters-lols-hall-of-fame-hall-of-legends-2025-skins-release-date-more-3196267/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\bd9f29b66820773c99d011d7ea494f58.json
+Saved https://www.dexerto.com/league-of-legends/lol-leak-reveals-major-shake-up-with-wasd-controls-finally-in-the-works-3195789/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\84090026affc7a8ded68845512918ab8.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-25-10-patch-notes-3188902/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\bf54f6be3624611d854e18eb29968ed8.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-now-lets-you-sell-your-recall-button-for-some-reason-and-you-cant-get-it-back-3188016/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\5ff89d263be7863146fb53a5223c6d51.json
+Saved https://www.dexerto.com/league-of-legends/lols-most-popular-pro-league-lost-30-million-in-3-years-3186219/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\a62453b89ac35d80601e8f4f231d35cb.json
+Saved https://www.dexerto.com/league-of-legends/classic-lol-champ-is-being-censored-after-15-years-3182567/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\3b7b534cc825f60349fa3d1bd750113b.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-25-09-patch-notes-3180554/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\b7068fbfb2fa125abe7f0376e30c08c2.json
+Saved https://www.dexerto.com/league-of-legends/lols-most-dedicated-garen-main-has-never-made-it-out-of-bronze-3179477/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\481d6bb588456366e8c6e120c1a4e4ea.json
+Saved https://www.dexerto.com/league-of-legends/league-of-legends-25-08-patch-notes-3176406/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\37f87ea691a6006d8bde82c2d4018769.json
+Saved https://www.dexerto.com/league-of-legends/t1-worlds-2024-skins-price-champions-release-date-3176182/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\0d255479c7fd0643349c68dd4059372a.json
+Saved https://www.dexerto.com/tv-movies/league-of-legends-is-getting-a-live-action-tv-series-set-to-film-in-2025-3172739/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\032590c82f835275eaa1858d77ce15b2.json
+Saved https://www.dexerto.com/league-of-legends/the-true-story-of-noarmwhatley-a-man-who-cheated-death-to-keep-playing-league-of-legends-3171854/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\dc38f717ac9845c1e14c124b54e73a10.json
+Fetching from https://www.dexerto.com/valorant/feed...
+Found 50 entries. Parsing...
+Saving 50 items...
+Saved https://www.dexerto.com/twitch/kyedae-and-tenz-break-up-streamers-address-split-and-respond-to-false-narratives-3315930/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\94838ef66d37ecd550f8d4bdbea18247.json
+Saved https://www.dexerto.com/valorant/valorant-12-02-patch-notes-bring-another-harbor-buff-reyna-nerf-3313521/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\22f93b8171cc0285b42cbc5ee3d15433.json
+Saved https://www.dexerto.com/valorant/valorant-12-01-patch-notes-finally-add-mfa-for-even-more-players-3306892/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\a7b8fc5182ddd4540da2e0dce44bdc9e.json
+Saved https://www.dexerto.com/valorant/valorant-12-0-patch-notes-add-new-bandit-pistol-agent-reworks-and-breeze-overhaul-3301069/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\5ff80fbbd00087e538c28f8ff492ed90.json
+Saved https://www.dexerto.com/valorant/valorant-11-11-patch-notes-finally-brings-gifting-for-valorant-points-3289188/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\56655bfdc13a6ddebcc917e669325c16.json
+Saved https://www.dexerto.com/valorant/valorant-11-10-patch-notes-finally-bring-harbor-rework-new-ability-3281898/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\b6154e88da71e2a194154c191afad5ae.json
+Saved https://www.dexerto.com/valorant/valorant-11-09-update-finally-clamps-down-on-smurfs-with-long-awaited-mfa-change-3275625/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\5522f1f1830579c447363a54cfe02c19.json
+Saved https://www.dexerto.com/valorant/riot-reportedly-developing-new-fps-set-in-valorant-universe-3269698/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\067aa40bbeb5b667599dd2d3cec408b9.json
+Saved https://www.dexerto.com/valorant/abyss-pearl-map-changes-revealed-for-valorant-patch-11-08-3265988/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\3e9ad0f11d1c9c39e7185e1a95bc197a.json
+Saved https://www.dexerto.com/valorant/valorant-devs-unveil-major-agent-changes-for-11-08-as-abilites-undergo-huge-shake-up-3265958/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\1cdbf8615cd741a8fea72aa04ae0bd62.json
+Saved https://www.dexerto.com/valorant/vct-2026-rostermania-tracker-valorant-team-rumors-rosters-3263935/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\8c5e1dadee66305b0b1eff03f1351d14.json
+Saved https://www.dexerto.com/valorant/valorant-11-07b-update-patch-notes-bring-veto-as-new-agent-but-theres-a-catch-3262995/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\0ab9ad00f8b46ba17fdbb168f9a9ed35.json
+Saved https://www.dexerto.com/valorant/valorant-agent-29-veto-abilities-and-everything-we-know-3262371/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\8c18de3d72e5ad9d5fb9789129e4b61f.json
+Saved https://www.dexerto.com/valorant/valorant-11-07-patch-notes-finally-fix-big-cypher-waylay-issue-with-minimap-change-3259452/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\c81dd226126fdc020469bdecc7d3f764.json
+Saved https://www.dexerto.com/valorant/valorant-devs-double-down-on-controversial-feature-to-fight-smurfs-boosters-3253309/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\edd02fa7260fe7de69d37c1cb11ea035.json
+Saved https://www.dexerto.com/valorant/valorant-11-06-patch-notes-finally-adds-replay-system-amid-massive-ban-wave-3251840/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\59da2d5415a821fa2eda2d7760a7ca40.json
+Saved https://www.dexerto.com/gaming/valorant-players-face-harsher-penalties-for-afks-and-dodging-3251447/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\27beac3505681e046114a8087ad71bb0.json
+Saved https://www.dexerto.com/valorant/valorant-11-05-patch-notes-bring-harbor-tweaks-afk-clampdown-3245088/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\437f1632e2e53f7a80dcf1d5d3a268df.json
+Saved https://www.dexerto.com/valorant/valorant-11-04-patch-notes-bring-big-chamber-sage-changes-before-act-5-3239944/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\1dc3f3cbd65b1e45db1fa7b4dc5efdcf.json
+Saved https://www.dexerto.com/battlefield/battlefield-6-anticheat-is-telling-players-to-please-uninstall-valorant-3236388/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\bf1eb01fec155711d41884882d4cfa74.json
+Saved https://www.dexerto.com/gaming/valorant-11-02-update-patch-notes-3231367/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\7db5428fe51afccc822132219a03d5ca.json
+Saved https://www.dexerto.com/valorant/valorant-devs-confirm-when-unreal-engine-5-switch-is-coming-3226496/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\66724d6bbb7ddc71ae4091567ed84e22.json
+Saved https://www.dexerto.com/valorant/valorant-11-00-patch-notes-bring-massive-agent-buffs-and-nerfs-3218419/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\702da0768a219e9b800a6da2e6dac7dd.json
+Saved https://www.dexerto.com/valorant/valorant-finisher-cam-added-in-10-11-update-patch-notes-3212952/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\24c97b29e5879af2d6e807dcdd0de878.json
+Saved https://www.dexerto.com/valorant/valorant-codes-3208484/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\cb1319229b7bc72be0b92bc9af25950b.json
+Saved https://www.dexerto.com/valorant/valorant-plans-to-eliminate-smurfing-by-adding-controversial-feature-3196074/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\e1ef907a5530256497840c68fbfc238f.json
+Saved https://www.dexerto.com/gaming/valorant-devs-reveal-huge-changes-for-11-00-update-five-year-anniversary-3207002/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\69ae3398ba4a8143a35ecb5ee34f8762.json
+Saved https://www.dexerto.com/valorant/valorant-streamer-shahzam-sent-violent-threats-after-calling-out-gamblers-on-ranked-matches-3198785/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\034d39a5545e4596316e310a1d863650.json
+Saved https://www.dexerto.com/gaming/valorant-mobile-to-have-its-own-version-of-tiktok-according-to-leak-3197030/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\922f6781912e15921ef06bf60d550ff7.json
+Saved https://www.dexerto.com/valorant/valorant-pro-florescent-accused-of-sexual-assault-3196893/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\2f21948956f71997e7ace0ac9d19855d.json
+Saved https://www.dexerto.com/valorant/valorant-na-challengers-cheating-scandal-explained-3196683/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\c51db931d327fa5772f3b1522f5e9336.json
+Saved https://www.dexerto.com/valorant/valorant-10-09-patch-notes-bring-massive-tejo-nerfs-at-last-3194898/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\6fafc1e7b6ee978b52b5984adf1f0528.json
+Saved https://www.dexerto.com/valorant/vct-masters-toronto-2025-schedule-how-to-watch-qualified-teams-3193984/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\b9ecfb6a4d7631960d8c2fa541652a4c.json
+Saved https://www.dexerto.com/valorant/valorant-star-tenz-explains-why-he-left-sentinels-after-4-years-3193490/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\4285c0a3c5264c2d4d5b27e20a5117cb.json
+Saved https://www.dexerto.com/valorant/valorant-dev-confirms-much-needed-feature-is-finally-coming-after-5-year-wait-3188470/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\fc5582d8f009adfe55a399d89d4bbfb2.json
+Saved https://www.dexerto.com/valorant/valorant-update-10-08-patch-notes-bring-big-yoru-nerf-other-changes-3187114/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\9337bb030299fa2c678fc182bc3d8171.json
+Saved https://www.dexerto.com/valorant/karmine-corps-team-owner-boycotts-valorant-pro-play-amid-vct-tech-issues-3186005/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\72cb83121dc6a195c3ae2d650cc23733.json
+Saved https://www.dexerto.com/valorant/valorant-pros-call-out-emea-broadcast-as-unacceptable-tech-issues-ruin-league-3185989/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\c27c6bbd00fce8db90e3017cabec58e7.json
+Saved https://www.dexerto.com/valorant/valorant-10-07-update-patch-notes-bring-deceptively-important-bugfixes-3180307/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\81580e8c5ac25fc3fab06b6073719f22.json
+Saved https://www.dexerto.com/valorant/valorant-coach-banned-from-competitive-for-worst-rizz-ever-after-dming-dozens-of-women-3176355/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\ddf7c1551c021a06d075652b1617b7bb.json
+Saved https://www.dexerto.com/valorant/valorant-10-06-update-patch-notes-buffs-kay-o-and-more-3174061/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\da699367da82b82e0d3668b05c78ee8c.json
+Saved https://www.dexerto.com/valorant/tenz-rips-into-valorants-power-rangers-meta-and-calls-for-cs2-inspired-changes-3165315/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\744d6dfac054f50b0a303e98f303dc4a.json
+Saved https://www.dexerto.com/valorant/valorant-10-05-update-patch-notes-brings-ranked-rollbacks-at-last-3164482/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\e38b307a18fa10e80475ff4bb37d6738.json
+Saved https://www.dexerto.com/valorant/neglected-valorant-agent-desperately-needs-a-buff-now-more-than-ever-3159024/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\aea4c178719c15dac3c03a07e1294174.json
+Saved https://www.dexerto.com/gaming/valorants-new-cyrax-bundle-looks-like-halo-but-players-think-its-hot-garbage-3156782/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\e5f4a40436e3bb0d66175e6676a012eb.json
+Saved https://www.dexerto.com/valorant/valorant-10-04-update-patch-notes-3155991/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\b406c058a607a3f3e81175b6409bc584.json
+Saved https://www.dexerto.com/valorant/valorant-players-rejoice-as-major-tejo-nerf-confirmed-for-patch-10-04-3153804/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\6e48dfe5b1426f0eb2e375af51a79a5e.json
+Saved https://www.dexerto.com/valorant/counter-strike-2-is-a-better-esport-than-valorant-g2s-vct-masters-bangkok-run-proves-it-3153350/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\23aa574d17a5a321956aa35fa5aef5ed.json
+Saved https://www.dexerto.com/valorant/valorant-agent-28-what-we-know-3137673/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\024d5ea27c923e2ae3b5f2fc1a0392ab.json
+Saved https://www.dexerto.com/valorant/valorant-update-10-03-patch-notes-agent-slows-change-mini-map-update-more-3135933/ to D:\Labs\gam3talk\apps\agent\scraper\data\raw\4a80fcb51d934707b2bc288d6b16c035.json
+Fetching from https://dotesports.com/league-of-legends/feed...
+Error fetching URL https://dotesports.com/league-of-legends/feed: 403 Client Error: Forbidden for url: https://dotesports.com/league-of-legends/feed
+Error fetching URL https://dotesports.com/league-of-legends/feed: 403 Client Error: Forbidden for url: https://dotesports.com/league-of-legends/feed
+Error fetching URL https://dotesports.com/league-of-legends/feed: 403 Client Error: Forbidden for url: https://dotesports.com/league-of-legends/feed
+Error parsing RSS https://dotesports.com/league-of-legends/feed: RetryError[<Future at 0x22a34e5d150 state=finished raised HTTPError>]
+No entries found for https://dotesports.com/league-of-legends/feed
+Fetching from https://dotesports.com/valorant/feed...
+Error fetching URL https://dotesports.com/valorant/feed: 403 Client Error: Forbidden for url: https://dotesports.com/valorant/feed
+Error fetching URL https://dotesports.com/valorant/feed: 403 Client Error: Forbidden for url: https://dotesports.com/valorant/feed
+Error fetching URL https://dotesports.com/valorant/feed: 403 Client Error: Forbidden for url: https://dotesports.com/valorant/feed
+Error parsing RSS https://dotesports.com/valorant/feed: RetryError[<Future at 0x22a3525c450 state=finished raised HTTPError>]
+No entries found for https://dotesports.com/valorant/feed
+Scraping cycle completed.

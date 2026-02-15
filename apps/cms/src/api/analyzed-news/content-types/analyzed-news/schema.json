@@ -1,0 +1,61 @@
+{
+    "kind": "collectionType",
+    "collectionName": "analyzed_news",
+    "info": {
+        "singularName": "analyzed-news",
+        "pluralName": "analyzed-news-items",
+        "displayName": "AnalyzedNews",
+        "description": "Output of the Analyzer Agent"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "originalRawData": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::raw-data.raw-data"
+        },
+        "game": {
+            "type": "enumeration",
+            "enum": [
+                "Valorant",
+                "League of Legends",
+                "CS2",
+                "Other"
+            ]
+        },
+        "contentType": {
+            "type": "enumeration",
+            "enum": [
+                "Transfer",
+                "Patch Notes",
+                "Match Result",
+                "General News"
+            ]
+        },
+        "importanceScore": {
+            "type": "integer",
+            "min": 1,
+            "max": 10
+        },
+        "title": {
+            "type": "string"
+        },
+        "summary": {
+            "type": "text"
+        },
+        "reasoning": {
+            "type": "text"
+        },
+        "status": {
+            "type": "enumeration",
+            "enum": [
+                "pending",
+                "approved",
+                "rejected"
+            ],
+            "default": "pending"
+        }
+    }
+}
