@@ -51,12 +51,12 @@ class StrapiClient:
                  print(f"Response: {e.response.text}")
             return None
 
-    def mark_raw_data_processed(self, raw_data_id: int) -> bool:
-        """Marks a raw data item as processed."""
+    def mark_raw_data_processed(self, document_id: str) -> bool:
+        """Marks a raw data item as processed. Uses documentId."""
         payload = {"data": {"processed": True}}
         try:
             response = requests.put(
-                f"{self.api_url}/api/raw-datas/{raw_data_id}",
+                f"{self.api_url}/api/raw-datas/{document_id}",
                 headers=self._get_headers(),
                 json=payload
             )

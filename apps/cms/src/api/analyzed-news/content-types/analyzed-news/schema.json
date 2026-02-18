@@ -53,7 +53,8 @@
             "enum": [
                 "pending",
                 "approved",
-                "rejected"
+                "rejected",
+                "written"
             ],
             "default": "pending"
         }

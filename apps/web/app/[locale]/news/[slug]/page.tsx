@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { MatchCarousel } from "@/components/home/MatchCarousel";
-import { mockNews } from "@/lib/mockData";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
@@ -16,6 +15,8 @@ import { getCategoryFromSlug } from "@/lib/slugUtils";
 import { NewsHero } from "@/components/news/NewsHero";
 import { NewsList } from "@/components/news/NewsList";
 import { LastNewsSidebar } from "@/components/home/LastNewsSidebar";
+import { getArticleBySlug, STRAPI_URL } from "@/lib/strapi";
+import { BlocksRenderer } from "@/components/article/BlocksRenderer";
 
 interface PageProps {
     params: Promise<{
@@ -29,7 +30,6 @@ export async function generateMetadata(
     parent: ResolvingMetadata
 ): Promise<Metadata> {
     const { locale, slug } = await params;
-    const currentLocale = locale as 'en' | 'fr' | 'es';
 
     // Check if it's a category
     const category = getCategoryFromSlug(slug);
@@ -40,7 +40,7 @@ export async function generateMetadata(
         };
     }
 
-    const article = mockNews.find((n) => n.slug[currentLocale] === slug);
+    const article = await getArticleBySlug(slug, locale);
 
     if (!article) {
         return {
@@ -48,9 +48,12 @@ export async function generateMetadata(
         };
     }
 
-    const title = article.title[currentLocale];
-    const description = article.summary[currentLocale];
+    const title = article.title;
+    const description = article.summary;
     const previousImages = (await parent).openGraph?.images || [];
+    const imageUrl = article.coverImage?.url
+        ? (article.coverImage.url.startsWith('http') ? article.coverImage.url : `${STRAPI_URL}${article.coverImage.url}`)
+        : "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2670&auto=format&fit=crop";
 
     return {
         title: `${title} | Gam3Talk`,
@@ -62,7 +65,7 @@ export async function generateMetadata(
             siteName: 'Gam3Talk',
             images: [
                 {
-                    url: article.image,
+                    url: imageUrl,
                     width: 1200,
                     height: 630,
                     alt: title,
@@ -76,14 +79,13 @@ export async function generateMetadata(
             card: 'summary_large_image',
             title: title,
             description: description,
-            images: [article.image],
+            images: [imageUrl],
         },
     };
 }
 
 export default async function Page({ params }: PageProps) {
     const { locale, slug } = await params;
-    const currentLocale = locale as 'en' | 'fr' | 'es';
 
     // 1. Check if slug is a Category
     const category = getCategoryFromSlug(slug);
@@ -117,25 +119,28 @@ export default async function Page({ params }: PageProps) {
     }
 
     // 2. Check if slug is an Article
-    const article = mockNews.find((n) => n.slug[currentLocale] === slug);
+    const article = await getArticleBySlug(slug, locale);
 
     if (!article) {
         notFound();
     }
 
+    const imageUrl = article.coverImage?.url
+        ? (article.coverImage.url.startsWith('http') ? article.coverImage.url : `${STRAPI_URL}${article.coverImage.url}`)
+        : "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2670&auto=format&fit=crop";
+
     // JSON-LD Structured Data
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'NewsArticle',
-        headline: article.title[currentLocale],
-        image: [article.image],
-        datePublished: new Date().toISOString(),
+        headline: article.title,
+        image: [imageUrl],
+        datePublished: article.publishedAt,
         author: [{
-            '@type': 'Organization',
-            name: 'Gam3Talk Team',
-            url: 'https://gam3talk.com'
+            '@type': 'Person',
+            name: (article as any).author?.name || 'Gam3Talk Team',
         }],
-        description: article.summary[currentLocale]
+        description: article.summary
     };
 
     const articleUrl = `https://gam3talk.com/${locale}/news/${slug}`;
@@ -158,11 +163,8 @@ export default async function Page({ params }: PageProps) {
                         <Breadcrumb
                             items={[
                                 { label: "News", href: `/${locale}/news` },
-                                { label: article.category, href: `/${locale}/news/${getCategoryFromSlug(slug) ? slug : article.category.toLowerCase().replace(/\s+/g, '-')}` },
-                                // Note: href above attempts to link to category page. Ideally we use a helper. 
-                                // Since we are in the article, we don't strictly know the slugified category unless we compute it.
-                                // But let's leave it simple for now or use reference.
-                                { label: article.title[currentLocale], active: true }
+                                { label: article.category?.name || "General", href: `/${locale}/news/${article.category?.slug || 'general'}` },
+                                { label: article.title, active: true }
                             ]}
                         />
                     </div>
@@ -171,49 +173,41 @@ export default async function Page({ params }: PageProps) {
                     <div className="mb-8 space-y-4">
                         <div className="flex items-center gap-2">
                             <Badge className="bg-primary text-primary-foreground hover:bg-primary/90">
-                                {article.category}
+                                {article.category?.name || "General"}
                             </Badge>
                             <span className="text-sm text-muted-foreground flex items-center gap-1">
                                 <Calendar className="w-4 h-4" />
-                                {article.date}
+                                {new Date(article.publishedAt).toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' })}
                             </span>
                         </div>
 
                         <h1 className="text-3xl md:text-5xl font-black uppercase leading-tight">
-                            {article.title[currentLocale]}
+                            {article.title}
                         </h1>
 
                         <p className="text-xl text-muted-foreground leading-relaxed font-medium">
-                            {article.summary[currentLocale]}
+                            {article.summary}
                         </p>
                     </div>
 
                     <figure className="mb-10 space-y-4">
                         <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl">
                             <Image
-                                src={article.image}
-                                alt={article.title[currentLocale]}
+                                src={imageUrl}
+                                alt={article.title}
                                 fill
                                 className="object-cover"
                                 priority
                             />
                         </div>
-                        <figcaption className="text-center text-sm text-muted-foreground font-medium italic italic">
-                            {article.title[currentLocale]} — © Gam3Talk
+                        <figcaption className="text-center text-sm text-muted-foreground font-medium italic">
+                            {article.title} — © Gam3Talk
                         </figcaption>
                     </figure>
 
                     {/* Content */}
                     <div className="prose dark:prose-invert prose-lg max-w-none text-foreground/90">
-                        <p className="whitespace-pre-line leading-relaxed">
-                            {article.content[currentLocale]}
-                        </p>
-
-                        <div className="mt-8 space-y-6 text-muted-foreground">
-                            <p>
-                                LDrum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                            </p>
-                        </div>
+                        <BlocksRenderer content={article.content} />
                     </div>
 
 
@@ -226,7 +220,7 @@ export default async function Page({ params }: PageProps) {
                             </Button>
 
                             <ArticleShareButtons
-                                title={article.title[currentLocale]}
+                                title={article.title}
                                 url={articleUrl}
                             />
                         </div>
@@ -243,8 +237,8 @@ export default async function Page({ params }: PageProps) {
                     <div className="mt-12">
                         <RelatedArticles
                             currentSlug={slug}
-                            category={article.category}
-                            locale={currentLocale}
+                            category={article.category?.name || "General"}
+                            locale={locale as 'en' | 'fr' | 'es'}
                         />
                     </div>
 

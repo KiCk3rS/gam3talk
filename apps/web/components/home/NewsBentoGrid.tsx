@@ -1,47 +1,66 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import { mockNews } from "@/lib/mockData";
+import { getArticles, STRAPI_URL } from "@/lib/strapi";
 import { cn } from "@/lib/utils";
-import { useLocale } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 
-export function NewsBentoGrid() {
-    const locale = useLocale() as 'en' | 'fr' | 'es';
-    const mainNews = mockNews.find((n) => n.isMain) || mockNews[0];
-    const rightTopNews = mockNews[1];
-    const rightBottomNews1 = mockNews[2];
-    const rightBottomNews2 = mockNews[3];
+export async function NewsBentoGrid() {
+    const locale = await getLocale() as 'en' | 'fr' | 'es';
 
-    const NewsItem = ({ news, className, titleSize = "text-xl" }: { news: typeof mainNews, className?: string, titleSize?: string }) => (
-        <Link href={`/news/${news.slug[locale]}`} className={cn("block relative overflow-hidden group cursor-pointer h-full", className)}>
-            <Card className="relative h-full w-full border-none shadow-none rounded-none overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+    let articles: any[] = [];
+    try {
+        const response = await getArticles({ locale, limit: 4 });
+        articles = response.data;
+    } catch (error) {
+        console.error("Failed to fetch articles:", error);
+    }
 
-                {/* News Background Image */}
-                <div className="absolute inset-0">
-                    <Image
-                        src={news.image}
-                        alt={news.title[locale]}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                </div>
+    const mainNews = articles[0];
+    const rightTopNews = articles[1];
+    const rightBottomNews1 = articles[2];
+    const rightBottomNews2 = articles[3];
 
-                <CardContent className="absolute bottom-0 left-0 right-0 p-6 z-20 flex flex-col justify-end h-full">
-                    <div className="flex justify-between items-center mb-2">
-                        <Badge variant="secondary" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-sm">
-                            {news.category}
-                        </Badge>
-                        <span className="text-xs text-gray-300 font-mono">{news.date}</span>
+    const NewsItem = ({ news, className, titleSize = "text-xl" }: { news: any, className?: string, titleSize?: string }) => {
+        if (!news) return <div className={cn("bg-muted animate-pulse", className)} />;
+
+        const imageUrl = news.coverImage?.url
+            ? (news.coverImage.url.startsWith('http') ? news.coverImage.url : `${STRAPI_URL}${news.coverImage.url}`)
+            : "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2670&auto=format&fit=crop";
+
+        return (
+            <Link href={`/news/${news.slug}`} className={cn("block relative overflow-hidden group cursor-pointer h-full", className)}>
+                <Card className="relative h-full w-full border-none shadow-none rounded-none overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+
+                    {/* News Background Image */}
+                    <div className="absolute inset-0">
+                        <Image
+                            src={imageUrl}
+                            alt={news.title}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
                     </div>
-                    <h3 className={cn("font-bold text-white leading-tight", titleSize)}>
-                        {news.title[locale]}
-                    </h3>
-                </CardContent>
-            </Card>
-        </Link>
-    );
+
+                    <CardContent className="absolute bottom-0 left-0 right-0 p-6 z-20 flex flex-col justify-end h-full">
+                        <div className="flex justify-between items-center mb-2">
+                            <Badge variant="secondary" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-sm">
+                                {news.category?.name || "General"}
+                            </Badge>
+                            <span className="text-xs text-gray-300 font-mono">
+                                {new Date(news.publishedAt).toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' })}
+                            </span>
+                        </div>
+                        <h3 className={cn("font-bold text-white leading-tight", titleSize)}>
+                            {news.title}
+                        </h3>
+                    </CardContent>
+                </Card>
+            </Link>
+        );
+    };
 
     return (
         <div className="w-full">

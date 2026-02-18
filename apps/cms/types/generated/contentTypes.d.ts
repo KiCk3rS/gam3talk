@@ -472,7 +472,9 @@ export interface ApiAnalyzedNewsAnalyzedNews
     >;
     publishedAt: Schema.Attribute.DateTime;
     reasoning: Schema.Attribute.Text;
-    status: Schema.Attribute.Enumeration<['pending', 'approved', 'rejected']> &
+    status: Schema.Attribute.Enumeration<
+      ['pending', 'approved', 'rejected', 'written']
+    > &
       Schema.Attribute.DefaultTo<'pending'>;
     summary: Schema.Attribute.Text;
     title: Schema.Attribute.String;

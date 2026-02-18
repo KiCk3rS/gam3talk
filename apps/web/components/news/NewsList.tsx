@@ -1,120 +1,138 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import { Link } from '@/i18n/routing';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Clock, ChevronLeft, ChevronRight } from "lucide-react";
-import { useLocale } from 'next-intl';
-import { mockNews } from "@/lib/mockData";
+import { getLocale } from 'next-intl/server';
+import { getArticles, STRAPI_URL } from "@/lib/strapi";
 import { cn } from "@/lib/utils";
 
-const ITEMS_PER_PAGE = 7; // Number of items per page
+const ITEMS_PER_PAGE = 7;
 
 interface NewsListProps {
     category?: string;
+    page?: number;
 }
 
-export function NewsList({ category }: NewsListProps) {
-    const locale = useLocale() as 'en' | 'fr' | 'es';
-    const [currentPage, setCurrentPage] = useState(1);
+export async function NewsList({ category, page = 1 }: NewsListProps) {
+    const locale = await getLocale() as 'en' | 'fr' | 'es';
 
-    // Filter news by category if provided
-    const filteredNews = category
-        ? mockNews.filter(news => news.category.toLowerCase() === category.toLowerCase())
-        : mockNews;
+    let articles: any[] = [];
+    let totalPages = 1;
+    let totalItems = 0;
 
-    // Calculate total pages
-    const totalPages = Math.ceil(filteredNews.length / ITEMS_PER_PAGE);
+    try {
+        const start = (page - 1) * ITEMS_PER_PAGE;
+        const response = await getArticles({
+            locale,
+            category,
+            limit: ITEMS_PER_PAGE,
+            start
+        });
+        articles = response.data;
+        totalItems = response.meta?.pagination?.total || 0;
+        totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+    } catch (error) {
+        console.error("Failed to fetch news list:", error);
+    }
 
-    // Get current items
-    const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
-    const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
-    const currentItems = filteredNews.slice(indexOfFirstItem, indexOfLastItem);
-
-    // Pagination handlers
-    const goToNextPage = () => {
-        if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    };
-
-    const goToPrevPage = () => {
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    };
+    if (articles.length === 0) {
+        return (
+            <div className="text-center py-20 bg-card rounded-xl border border-border/50">
+                <p className="text-muted-foreground font-bold uppercase tracking-widest">
+                    Aucun article trouvé
+                </p>
+            </div>
+        );
+    }
 
     return (
         <div className="flex flex-col gap-8">
             <div className="grid grid-cols-1 gap-6">
-                {currentItems.map((news) => (
-                    <Link href={`/news/${news.slug[locale]}`} key={news.id} className="group bg-card border border-border/50 hover:border-primary/50 rounded-xl overflow-hidden transition-all hover:shadow-lg flex flex-col md:flex-row h-full md:h-52">
-                        {/* Image */}
-                        <div className="relative w-full md:w-1/3 h-48 md:h-full shrink-0 overflow-hidden">
-                            <Image
-                                src={news.image}
-                                alt={news.title[locale]}
-                                fill
-                                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            />
-                            <div className="absolute top-3 left-3">
-                                <Badge className="bg-primary/90 text-primary-foreground font-bold uppercase tracking-wider text-[10px] border-none">
-                                    {news.category}
-                                </Badge>
-                            </div>
-                        </div>
+                {articles.map((news) => {
+                    const imageUrl = news.coverImage?.url
+                        ? (news.coverImage.url.startsWith('http') ? news.coverImage.url : `${STRAPI_URL}${news.coverImage.url}`)
+                        : "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2670&auto=format&fit=crop";
 
-                        {/* Content */}
-                        <div className="flex flex-col justify-between p-5 md:p-6 w-full">
-                            <div className="space-y-3">
-                                <div className="flex items-center gap-2 text-xs text-muted-foreground font-bold uppercase tracking-wider">
-                                    <Clock className="w-3.5 h-3.5" />
-                                    {news.date}
+                    return (
+                        <Link href={`/news/${news.slug}`} key={news.id} className="group bg-card border border-border/50 hover:border-primary/50 rounded-xl overflow-hidden transition-all hover:shadow-lg flex flex-col md:flex-row h-full md:h-52">
+                            {/* Image */}
+                            <div className="relative w-full md:w-1/3 h-48 md:h-full shrink-0 overflow-hidden">
+                                <Image
+                                    src={imageUrl}
+                                    alt={news.title}
+                                    fill
+                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                                <div className="absolute top-3 left-3">
+                                    <Badge className="bg-primary/90 text-primary-foreground font-bold uppercase tracking-wider text-[10px] border-none">
+                                        {news.category?.name || "General"}
+                                    </Badge>
                                 </div>
-                                <h3 className="text-xl md:text-2xl font-black uppercase leading-tight text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                                    {news.title[locale]}
-                                </h3>
-                                <p className="text-sm text-muted-foreground line-clamp-2 md:line-clamp-2 font-medium">
-                                    {news.summary[locale]}
-                                </p>
                             </div>
 
-                            <div className="mt-4 flex items-center text-xs font-black uppercase tracking-widest text-primary opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">
-                                Lire l'article
+                            {/* Content */}
+                            <div className="flex flex-col justify-between p-5 md:p-6 w-full">
+                                <div className="space-y-3">
+                                    <div className="flex items-center gap-2 text-xs text-muted-foreground font-bold uppercase tracking-wider">
+                                        <Clock className="w-3.5 h-3.5" />
+                                        {new Date(news.publishedAt).toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' })}
+                                    </div>
+                                    <h3 className="text-xl md:text-2xl font-black uppercase leading-tight text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                                        {news.title}
+                                    </h3>
+                                    <p className="text-sm text-muted-foreground line-clamp-2 md:line-clamp-2 font-medium">
+                                        {news.summary}
+                                    </p>
+                                </div>
+
+                                <div className="mt-4 flex items-center text-xs font-black uppercase tracking-widest text-primary opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">
+                                    Lire l'article
+                                </div>
                             </div>
-                        </div>
-                    </Link>
-                ))}
+                        </Link>
+                    );
+                })}
             </div>
 
             {/* Pagination Controls */}
             {totalPages > 1 && (
                 <div className="flex items-center justify-center gap-4 mt-8">
-                    <Button
-                        variant="outline"
-                        size="icon"
-                        onClick={goToPrevPage}
-                        disabled={currentPage === 1}
-                        className="w-10 h-10 rounded-full border-2 border-border/50 hover:border-primary hover:text-primary disabled:opacity-30"
+                    <Link
+                        href={{
+                            pathname: '/news',
+                            query: {
+                                ...(category ? { category } : {}),
+                                page: page - 1
+                            }
+                        }}
+                        className={cn(
+                            "inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-border/50 hover:border-primary hover:text-primary transition-colors",
+                            page <= 1 && "pointer-events-none opacity-30"
+                        )}
                     >
                         <ChevronLeft className="w-5 h-5" />
-                    </Button>
+                    </Link>
+
                     <span className="text-sm font-black uppercase tracking-wider text-muted-foreground">
-                        Page <span className="text-foreground">{currentPage}</span> / {totalPages}
+                        Page <span className="text-foreground">{page}</span> / {totalPages}
                     </span>
-                    <Button
-                        variant="outline"
-                        size="icon"
-                        onClick={goToNextPage}
-                        disabled={currentPage === totalPages}
-                        className="w-10 h-10 rounded-full border-2 border-border/50 hover:border-primary hover:text-primary disabled:opacity-30"
+
+                    <Link
+                        href={{
+                            pathname: '/news',
+                            query: {
+                                ...(category ? { category } : {}),
+                                page: page + 1
+                            }
+                        }}
+                        className={cn(
+                            "inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-border/50 hover:border-primary hover:text-primary transition-colors",
+                            page >= totalPages && "pointer-events-none opacity-30"
+                        )}
                     >
                         <ChevronRight className="w-5 h-5" />
-                    </Button>
+                    </Link>
                 </div>
             )}
         </div>

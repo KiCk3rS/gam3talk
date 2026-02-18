@@ -30,31 +30,47 @@ def run_analyzer():
     print(f"Found {len(raw_items)} items to analyze.")
 
     for item in raw_items:
-        item_id = item.get("id")
-        print(f"Analyzing item {item_id}...")
+        # Strapi 5 uses documentId for operations
+        document_id = item.get("documentId")
+        item_id = item.get("id") # Keep ID for reference/logging if needed, but actions use documentId
+        
+        if not document_id:
+            print(f"Warning: No documentId found for item {item_id}. Skipping processing update.")
+            continue
+
+        print(f"Analyzing item {item_id} (DocID: {document_id})...")
         
         analysis_result = analyzer.analyze(item)
         
         if analysis_result:
-            print(f"Analysis successful. Score: {analysis_result.get('importanceScore')}")
+            score = analysis_result.get('importanceScore', 0)
+            print(f"Analysis successful. Score: {score}")
             
             # Prepare payload for AnalyzedNews
-            # We need to link the originalRawData
-            # Strapi relations often expect just the ID or { id: ID }
-            analysis_result['originalRawData'] = item_id
+            # Link via documentId
+            analysis_result['originalRawData'] = document_id
             
-            # Save to Strapi
-            saved = strapi.post_analyzed_news(analysis_result)
-            
-            if saved:
-                print(f"Saved AnalyzedNews for item {item_id}.")
-                # Mark raw data as processed
-                if strapi.mark_raw_data_processed(item_id):
-                    print(f"Marked item {item_id} as processed.")
+            if score >= 7:
+                # Save to Strapi only if score is high enough
+                saved = strapi.post_analyzed_news(analysis_result)
+                
+                if saved:
+                    print(f"Saved AnalyzedNews for item {item_id}.")
+                    # Mark raw data as processed
+                    if strapi.mark_raw_data_processed(document_id):
+                        print(f"Marked item {item_id} as processed.")
+                    else:
+                        print(f"Failed to mark item {item_id} as processed.")
                 else:
-                    print(f"Failed to mark item {item_id} as processed.")
+                    print(f"Failed to save AnalyzedNews for item {item_id}.")
             else:
-                print(f"Failed to save AnalyzedNews for item {item_id}.")
+                print(f"Score {score} is too low (< 7). Skipping save for item {item_id}.")
+                # Still mark as processed to avoid re-analyzing
+                if strapi.mark_raw_data_processed(document_id):
+                    print(f"Marked low-score item {item_id} as processed.")
+                else:
+                    print(f"Failed to mark low-score item {item_id} as processed.")
+
         else:
             print(f"Analysis failed for item {item_id}.")
 
